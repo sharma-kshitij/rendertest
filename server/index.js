@@ -5,10 +5,12 @@ const PORT = 3000;
 const cors = require("cors")
 
 app.use(cors())
+app.use(express.json())
   
 app.get('/', (req, res)=>{ 
-    res.status(200); 
-    res.send("Welcome to root URL of Server"); 
+    res.status(200);
+    const test = {obj:"Welcome to root URL of Server"}
+    res.send(test); 
 }); 
   
 app.listen(PORT, (error) =>{ 
